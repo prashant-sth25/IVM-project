@@ -1,4 +1,4 @@
-package src.ul;
+package src.ui;
 
 public class ConsoleMenu {
     
