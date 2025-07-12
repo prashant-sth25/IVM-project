@@ -1,0 +1,5 @@
+101,Cooler,15,A1
+102,Cardboard Boxes,200,B3
+103,Copper Wire,50,C1
+104,Bread Board,100,D4
+105,Jumper Wire Bundel ,75,E3

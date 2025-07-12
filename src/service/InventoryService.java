@@ -1,14 +1,22 @@
 package src.service;
 import src.model.Product;
+
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 public class InventoryService {
     //Map to store product by ID
-    private Map<Integer, Product> inventory = new HashMap<>();
+    private Map<Integer, Product> inventory;
+    
+    public InventoryService(){
+        //load saved inventory on startup
+        inventory = FileManager.loadInventory();
+    }
 
     public void addProduct(Product product){
         inventory.put(product.getId(),product);
+        FileManager.saveinventory(inventory);
     }
 
     // Method to check in a product by increasing its quantity
@@ -16,6 +24,7 @@ public class InventoryService {
         Product p = inventory.get(productId);
         if (p!=null){
             p.setQuantity(p.getQuantity() + quantity);
+            FileManager.saveinventory(inventory);
         }
     }
 
@@ -24,6 +33,7 @@ public class InventoryService {
         Product p = inventory.get(productId);
         if(p!=null && p.getQuantity() >=quantity){
             p.setQuantity(p.getQuantity() - quantity);
+            FileManager.saveinventory(inventory);
         }
     }
 
