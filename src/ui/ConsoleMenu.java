@@ -46,6 +46,7 @@ public class ConsoleMenu {
         }
     }
 
+    //Add new product to the inventory
     private void addProduct(){
         System.out.print("Enter ID: ");
         int id = Integer.parseInt(scanner.nextLine());
@@ -60,6 +61,8 @@ public class ConsoleMenu {
         inventoryService.addProduct(p);
         System.out.println("Product added successfully.");
     }
+
+    //Check in a product by increasing its quantity
     private void checkIn(){
         System.out.print("Enter Product ID: ");
         int id = Integer.parseInt(scanner.nextLine());
@@ -70,6 +73,7 @@ public class ConsoleMenu {
         System.out.println("Product checked in successfully.");
     }
 
+    //Check out a product by decreasing its quantity
     private void checkOut(){
         System.out.print("Enter Product ID: ");
         int id = Integer.parseInt(scanner.nextLine());

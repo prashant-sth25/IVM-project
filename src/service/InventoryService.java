@@ -4,12 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class InventoryService {
+    //Map to store product by ID
     private Map<Integer, Product> inventory = new HashMap<>();
 
     public void addProduct(Product product){
         inventory.put(product.getId(),product);
     }
 
+    // Method to check in a product by increasing its quantity
     public void checkIn(int productId, int quantity){
         Product p = inventory.get(productId);
         if (p!=null){
@@ -17,6 +19,7 @@ public class InventoryService {
         }
     }
 
+    // Method to check out a product by decreasing its quantity
     public void checkOut(int productId, int quantity){
         Product p = inventory.get(productId);
         if(p!=null && p.getQuantity() >=quantity){
