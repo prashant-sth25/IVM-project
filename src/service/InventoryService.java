@@ -2,6 +2,7 @@ package src.service;
 import src.model.Product;
 
 import java.io.File;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,10 +38,14 @@ public class InventoryService {
         }
     }
 
-    public void listProducts(){
-        for(Product p : inventory.values()){
-            System.out.println(p);
-        }
+    // public void listProducts(){
+    //     for(Product p : inventory.values()){
+    //         System.out.println(p);
+    //     }
+    // }
+
+    public Collection <Product> listProducts(){
+        return inventory.values();
     }
 
 }
